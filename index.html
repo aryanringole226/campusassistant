@@ -1,68 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="AI Campus Copilot — MRDU student dashboard and general AI assistant">
-  <title>AI Campus Copilot</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071827"><meta name="description" content="AI Campus Copilot student workspace">
+  <title>Dashboard | AI Campus Copilot</title><link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="mobile-bar">
-    <div class="mobile-brand"><b>AI</b><span>Campus Copilot</span></div>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
-  </div>
-  <div class="app" id="app">
-    <aside id="sidebar" aria-label="Main navigation">
-      <div class="brand"><b>AI</b><span>Campus Copilot<small>MRDU Smart Campus</small></span></div>
-      <nav>
-        <button class="nav active" data-page="dashboard" type="button"><span aria-hidden="true">⌂</span><span class="nav-label">Dashboard</span></button>
-        <button class="nav" data-page="timetable" type="button"><span aria-hidden="true">▣</span><span class="nav-label">Timetable</span></button>
-        <button class="nav" data-page="assignments" type="button"><span aria-hidden="true">✓</span><span class="nav-label">Assignments</span></button>
-        <button class="nav" data-page="assistant" type="button"><span aria-hidden="true">🤖</span><span class="nav-label">AI Assistant</span></button>
-      </nav>
-      <a class="portal" href="https://academics.mrdu.edu.in" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span><span class="portal-label">MRDU Academic Portal</span></a>
-    </aside>
-    <div class="scrim" id="scrim" aria-hidden="true"></div>
-    <main>
-      <header>
-        <div><small>MALLA REDDY DEEMED TO BE UNIVERSITY</small><h1 id="title">Good morning 👋</h1></div>
-        <label class="section-picker">Section <select id="section" aria-label="Select section"></select></label>
-      </header>
-
-      <section id="dashboard" class="page active" aria-labelledby="dashboard-title">
-        <div class="hero"><div><span>AI CAMPUS COPILOT</span><h2 id="dashboard-title">Know what to do next.</h2><p>Timetable + assignments + AI planning in one place.</p></div><button id="planBtn" type="button">✨ What should I do today?</button></div>
-        <div class="stats">
-          <div><small>Next class</small><b id="next">—</b><span class="muted" id="nextTime">—</span></div>
-          <div><small>Pending assignments</small><b id="count">0</b><span class="muted">Across all subjects</span></div>
-          <div><small>Section</small><b id="secCard">SEC-A</b><span class="muted" id="date"></span></div>
-        </div>
-        <div class="cols"><div class="card"><h3>Today's timetable</h3><div id="today"></div></div><div class="card"><h3>Priority assignments</h3><div id="priority"></div></div></div>
-        <div class="card"><h3>✨ AI Daily Plan</h3><div id="plan">Click the button above.</div></div>
-      </section>
-
-      <section id="timetable" class="page" aria-labelledby="timetable-title">
-        <div class="head"><div><h2 id="timetable-title">Smart Timetable</h2><p>Your local demo timetable for the selected section.</p></div><span class="pill" id="ttUpdated">Local demo data</span></div>
-        <div class="card table-wrap"><div class="table" id="tt" role="table" aria-label="Weekly timetable"></div></div>
-      </section>
-
-      <section id="assignments" class="page" aria-labelledby="assignments-title">
-        <div class="head"><div><h2 id="assignments-title">Assignments</h2><p>Track deadlines and open the MRDU portal.</p></div><a class="button" href="https://academics.mrdu.edu.in" target="_blank" rel="noopener noreferrer">Open Portal</a></div>
-        <div class="sync card"><div><b>Demo Data Sync</b><span id="syncStatus">Use one canonical dataset across Dashboard, Assignments, and AI context.</span></div><button id="syncDemoBtn" type="button">↻ Sync demo data</button></div>
-        <div class="card" id="alist"></div>
-        <p class="note">Production note: connect the assignments endpoint only to an approved MRDU API/session. Never store student passwords in frontend code.</p>
-      </section>
-
-      <section id="assistant" class="page" aria-labelledby="assistant-title">
-        <div class="head"><div><h2 id="assistant-title">AI Campus Assistant</h2><p>Ask about campus, coding, math, science, writing, careers, planning, or general topics.</p></div><div class="assistant-actions"><span id="aiStatus" class="ai-status">Checking AI…</span><button class="ghost" id="clearChat" type="button">Clear</button></div></div>
-        <div class="card chat">
-          <div id="chat" class="messages" aria-live="polite" aria-label="Chat messages"><div class="msg">Hi! I’m your general AI + campus copilot. Ask me anything I can help with.</div></div>
-          <form class="composer" id="composer"><label class="sr-only" for="q">Ask the AI</label><textarea id="q" rows="1" maxlength="12000" placeholder="Ask anything…" autocomplete="off"></textarea><button id="stopBtn" class="ghost" type="button" hidden>Stop</button><button id="sendBtn" type="submit">Send</button></form>
-        </div>
-      </section>
-    </main>
-  </div>
-  <script src="script.js" defer></script>
-</body>
-</html>
+<body><div class="app-shell">
+  <aside class="sidebar" aria-label="Main navigation">
+    <a class="brand" href="index.html"><b>AI</b><span>Campus Copilot<small>MRDU Smart Campus</small></span></a>
+    <nav class="nav"><a data-page="dashboard" href="index.html">⌂ <span>Dashboard</span></a><a data-page="timetable" href="timetable.html">▣ <span>Timetable</span></a><a data-page="assignments" href="assignments.html">✓ <span>Assignments</span></a><a data-page="assistant" href="assistant.html">🤖 <span>AI Assistant</span></a></nav>
+    <button id="themeToggle" class="theme-toggle" type="button"></button>
+    <a class="portal" href="https://academics.mrdu.edu.in" target="_blank" rel="noopener noreferrer">↗ Academic Portal</a>
+  </aside>
+  <main class="main"><header class="topbar"><div><p class="eyebrow">MALLA REDDY DEEMED TO BE UNIVERSITY</p><h1 id="pageTitle">Good morning 👋</h1></div><label class="section-picker">Section <select id="section" aria-label="Select section"></select></label></header>
+    <div class="page-content"><section class="hero card"><div><p class="eyebrow">AI CAMPUS COPILOT</p><h2>Know what to do next.</h2><p>Timetable, assignments and AI planning in one smart workspace.</p></div><button id="planBtn" class="primary" type="button">Generate plan</button></section>
+      <section class="stats"><article class="card"><small>Next class</small><strong id="next">—</strong><span id="nextTime">—</span></article><article class="card"><small>Pending assignments</small><strong id="count">0</strong><span>Across all subjects</span></article><article class="card"><small>Section</small><strong id="secCard">SEC-A</strong><span id="date">—</span></article></section>
+      <section class="columns"><article class="card panel"><h3>Today's timetable</h3><div id="today" class="list"></div></article><article class="card panel"><h3>Priority assignments</h3><div id="priority" class="list"></div></article></section>
+      <section class="card panel"><h3>✨ AI daily plan</h3><div id="plan" class="plan">Click the button above.</div></section>
+    </div>
+  </main>
+</div><script src="script.js" defer></script></body></html>
